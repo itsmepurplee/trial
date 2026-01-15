@@ -499,6 +499,64 @@
     margin-top: 40px;
   }
 }
+/* =========================
+   CAREER EDITORIAL SECTION
+========================= */
+
+.career-editorial {
+  background: #fbf1ed;
+  padding: 140px 24px;
+}
+
+.career-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 80px;
+}
+
+/* LEFT */
+.career-name {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: #8b5e4a;
+  margin-bottom: 12px;
+}
+
+.career-left h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  margin: 0;
+}
+
+/* RIGHT */
+.career-item {
+  margin-bottom: 32px;
+}
+
+.career-item h4 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: #5b2e1d;
+}
+
+.career-item p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #6f4a3a;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .career-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .career-left h2 {
+    margin-bottom: 40px;
+  }
+}
 
 </style>
 
@@ -637,22 +695,57 @@
 
 
     <!-- Career -->
-    <section id="experience" class="section">
+    <section id="experience" class="career-editorial">
 
+  <div class="career-grid">
+
+    <!-- LEFT COLUMN -->
+    <div class="career-left">
+      <p class="career-name">Yulia Stepanovna Vorontsova</p>
       <h2>Career</h2>
-      <p>
-        I am currently a shareholder and executive participant at
-        <strong>BEST WAY GROUP INC</strong>, a Sino–U.S. logistics and
-        international freight forwarding company.
-      </p>
+    </div>
 
-      <ul>
-        <li>Strategic planning and growth initiatives</li>
-        <li>Cross-department leadership</li>
-        <li>Partner negotiations</li>
-        <li>Operational and performance optimization</li>
-      </ul>
-    </section>
+    <!-- RIGHT COLUMN -->
+    <div class="career-right">
+
+      <div class="career-item">
+        <h4>Executive Leadership</h4>
+        <p>
+          Shareholder and executive participant at BEST WAY GROUP INC,
+          overseeing strategic direction and long-term growth initiatives.
+        </p>
+      </div>
+
+      <div class="career-item">
+        <h4>International Trade & Logistics</h4>
+        <p>
+          Extensive experience managing cross-border logistics operations
+          between Sino–U.S. markets, ensuring efficiency and compliance.
+        </p>
+      </div>
+
+      <div class="career-item">
+        <h4>Strategic Planning</h4>
+        <p>
+          Leading corporate planning, performance optimization, and
+          multi-department coordination to drive sustainable outcomes.
+        </p>
+      </div>
+
+      <div class="career-item">
+        <h4>Partnership & Negotiation</h4>
+        <p>
+          Managing high-level partner negotiations and stakeholder
+          relationships across international business environments.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
 
     <!-- Philosophy -->
     <section class="section">
