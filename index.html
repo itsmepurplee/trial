@@ -436,6 +436,77 @@
     display: none;
   }
 }
+/* =========================
+   EDUCATION EDITORIAL STYLE
+========================= */
+
+.education-editorial {
+  background: #3b7f4a;
+  padding: 140px 24px;
+}
+
+.education-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* TEXT */
+.education-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 44px;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.education-text p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* IMAGE */
+.education-image {
+  position: relative;
+}
+
+.education-image img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 6px;
+  position: relative;
+  z-index: 2;
+}
+
+/* YELLOW ACCENT */
+.education-accent {
+  position: absolute;
+  right: -24px;
+  top: -24px;
+  width: 120px;
+  height: 100%;
+  background: #e7d338;
+  z-index: 1;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .education-accent {
+    display: none;
+  }
+
+  .education-image {
+    margin-top: 40px;
+  }
+}
 
 </style>
 
@@ -543,19 +614,35 @@
 
 
     <!-- Education -->
-    <section id="education" class="section">
+   <section id="education" class="education-editorial">
 
-      <h2>Education</h2>
+  <div class="education-grid">
+
+    <!-- LEFT TEXT -->
+    <div class="education-text">
+      <h2>Educational Background</h2>
+
       <p>
-        <strong>University of Hong Kong</strong><br />
+        <strong>University of Hong Kong</strong><br>
         MBA — Business Administration & Financial Economics
       </p>
 
       <p>
-        Earlier education completed in Helsinki, Finland, where I developed a
-        strong foundation in communication, arts, and global awareness.
+        Earlier education completed in Helsinki, Finland, where I developed
+        a strong foundation in communication, arts, and global awareness.
       </p>
-    </section>
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="education-image">
+      <div class="education-accent"></div>
+      <img src="images/education.jpg" alt="Educational institution">
+    </div>
+
+  </div>
+
+</section>
+
 
     <!-- Career -->
     <section id="experience" class="section">
