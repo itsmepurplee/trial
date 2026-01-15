@@ -221,14 +221,7 @@ body, p, li, a {
 }
 
 
-/* =========================
-   INTRO GRID
-========================= */
-.intro-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1.1fr;
-  gap: 64px;
-}
+
 
 /* =========================
    TEXT
@@ -240,68 +233,8 @@ body, p, li, a {
 /* =========================
    IMAGE
 ========================= */
-..intro-section {
-  position: relative;
-  padding: 160px 8% 180px;
-  background:
-    radial-gradient(
-      circle at top center,
-      rgba(40, 80, 130, 0.35),
-      rgba(0, 0, 0, 0.9) 55%,
-      #000 100%
-    );
-  overflow: hidden;
-}
-.intro-section::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 900px;
-  height: 900px;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(
-    circle,
-    rgba(255,255,255,0.06),
-    transparent 65%
-  );
-  filter: blur(80px);
-  pointer-events: none;
-}
 
 
-/* Frame */
-.intro-image::after {
-  content: "";
-  position: absolute;
-  inset: -8px;
-  border: 1px solid var(--border-light);
-  border-radius: 8px;
-  z-index: -1;
-}
-
-
-/* Text colors */
-.intro-dark h1 {
-  color: #ffffff;
-}
-
-.intro-dark p {
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.intro-dark .meta {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-/* Image adjustments for dark background */
-.intro-dark .intro-image img {
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
-}
-
-.intro-dark .intro-image::after {
-  border-color: rgba(255, 255, 255, 0.08);
-}
 
 /* =========================
    MOBILE
@@ -425,102 +358,57 @@ body, p, li, a {
 }
 
 
-/* soft frame behind image */
-
-/* INTRO LAYOUT — TEXT LEFT, IMAGE RIGHT */
+/* CARD CONTENT: TEXT LEFT, IMAGE RIGHT */
 .intro-grid {
   display: grid;
-  grid-template-columns: 1.0fr 1.4fr;
-  gap: 64px;
+  grid-template-columns: 1.1fr 1.4fr;
+  gap: 80px;
+  align-items: center;
 }
 
-
-
-
-/* INTRO IMAGE — NO LIMIT, NO CROP */
-.intro-image {
-  width: 100%;
-}
-
-.intro-image img {
-  width: 100%;
-  height: auto;          /* ✅ keeps original proportions */
-  max-width: none;       /* ✅ removes width limit */
-  object-fit: contain;   /* ✅ NO CROPPING */
-  border-radius: 26px;
-  display: block;
-}
-/* INTRO LAYOUT — TEXT LEFT, IMAGE RIGHT */
-.intro-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.6fr;
-  gap: 64px;
-}
-
-/* INTRO IMAGE CONTAINER — BIG AREA */
-.intro-image {
-  width: 100%;
-}
-
-/* INTRO IMAGE — NO LIMIT, NO CROP */
-.intro-image img {
-  width: 100%;
-  height: auto;
+/* TEXT */
+.intro-text {
   max-width: none;
-  object-fit: contain;
-  display: block;
-  border-radius: 26px;
-  box-shadow: 0 40px 110px rgba(0, 0, 0, 0.45);
 }
-/* ===== FINAL INTRO LAYOUT — RED BOX BEHAVIOR ===== */
 
-.intro-card {
-  display: block;
+/* IMAGE CONTAINER */
+.intro-image {
+  width: 100%;
 }
+
+/* IMAGE ITSELF */
+.intro-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 22px;
+  object-fit: cover;
+}
+/* ===== FINAL, CLEAN INTRO LAYOUT ===== */
 
 .intro-grid {
   display: grid;
-  grid-template-columns: 1fr 1.6fr;
-  gap: 64px;
-  align-items: stretch;   /* 🔑 THIS FIXES EVERYTHING */
+  grid-template-columns: 1.1fr 1.4fr;
+  gap: 80px;
+  align-items: center;
 }
 
+/* TEXT */
+.intro-text {
+  max-width: none;
+}
+
+/* IMAGE */
 .intro-image {
   width: 100%;
-  height: 100%;
-  display: flex;
-}
-
-.intro-image img {
-  width: 100%;
-  height: 100%;          /* 🔴 THIS CREATES THE RED BOX */
-  object-fit: contain;   /* NO CROPPING */
-  display: block;
-  border-radius: 26px;
-}
-.intro {
-  position: relative;
-  padding: 140px 0;
-}
-
-.intro-image {
-  position: absolute;
-  top: 50%;
-  right: 6%;
-  transform: translateY(-50%);
-  width: 48%;
-  z-index: 1;
 }
 
 .intro-image img {
   width: 100%;
   height: auto;
-  object-fit: contain;
-  border-radius: 28px;
-}
-.intro-card {
-  position: relative;
-  z-index: 2;
+  display: block;
+  border-radius: 22px;
+  object-fit: cover;
 }
 
 </style>
@@ -573,32 +461,24 @@ body, p, li, a {
   <main>
 
     <!-- Intro -->
-<section class="intro intro-dark">
-  <div class="intro-image">
-        <img src="images/Newp.jpg" alt="Yulia Vorontsova portrait">
-
-      </div>
-  <div class="intro-card fade-in">
-
+<section class="intro-dark">
+  <div class="intro-card">
     <div class="intro-grid">
 
       <div class="intro-text">
         <h1>Yulia Stepanovna Vorontsova</h1>
-        <p>
-          A woman of intelligence, elegance, and resilience — blending strategy,
-          emotional intelligence, and global perspective.
-        </p>
-
-        <div class="meta">
-          Born March 10, 1987 · Russian ancestry · Based in Los Angeles, California
-        </div>
+        <p>A woman of intelligence, elegance, and resilience…</p>
+        <p class="meta">Born March 10, 1987 · Los Angeles</p>
       </div>
 
-      
+      <div class="intro-image">
+        <img src="images/your-image.jpg" alt="Portrait">
+      </div>
 
     </div>
   </div>
 </section>
+
 
 
     <div class="divider"></div>
