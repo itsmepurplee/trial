@@ -337,6 +337,105 @@
     grid-template-columns: 1fr;
   }
 }
+/* =========================
+   EDITORIAL PROFILE SECTION
+========================= */
+
+.profile-editorial {
+  padding: 140px 24px;
+  background: #f6f2e9;
+}
+
+.editorial-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* CARDS */
+.editorial-card {
+  padding: 48px;
+  border-radius: 14px;
+}
+
+.editorial-card.light {
+  background: #d95c43;
+  color: #ffffff;
+}
+
+.editorial-card.dark {
+  background: #1f3d2b;
+  color: #ffffff;
+}
+
+/* TEXT */
+.editorial-card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.editorial-card p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* BUTTON */
+.editorial-btn {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 10px 18px;
+  background: #ffffff;
+  color: #111;
+  border-radius: 20px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* IMAGE */
+.editorial-image {
+  position: relative;
+  text-align: center;
+}
+
+.editorial-image img {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  border-radius: 12px;
+  z-index: 2;
+}
+
+/* BACKGROUND BLOCK */
+.image-bg {
+  position: absolute;
+  width: 260px;
+  height: 340px;
+  background: #f1b84b;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 12px;
+  z-index: 1;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .editorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .editorial-image {
+    margin: 40px 0;
+  }
+
+  .image-bg {
+    display: none;
+  }
+}
 
 </style>
 
@@ -407,34 +506,40 @@
     <div class="divider"></div>
 
     <!-- About -->
-    <section id="about" class="profile-section">
-  <div class="profile-container">
+    <section id="about" class="profile-editorial">
 
-    <!-- LEFT: IMAGE -->
-    <div class="profile-image">
-      <img src="images/meeting.jpg" alt="">
+  <div class="editorial-grid">
 
+    <!-- LEFT CARD -->
+    <div class="editorial-card light">
+      <h3>Professional Profile</h3>
+      <p>
+        Strategic leadership, global logistics expertise,
+        and financial insight shaped by cross-border business
+        and long-term value creation.
+      </p>
+      <a href="#experience" class="editorial-btn">Explore Experience →</a>
     </div>
 
-    <!-- RIGHT: YOUR TEXT -->
-    <div class="profile-text">
-      <h2>Professional Profile</h2>
+    <!-- CENTER IMAGE -->
+    <div class="editorial-image">
+      <div class="image-bg"></div>
+      <img src="images/professionalprofile.jpg" alt="Professional portrait">
+    </div>
 
+    <!-- RIGHT CARD -->
+    <div class="editorial-card dark">
       <p>
-        I am a Russian-born entrepreneur and executive currently based in the
-        Greater Los Angeles Area. With a background in international trade,
-        logistics, and financial strategy, I have spent my life navigating
-        cross-cultural environments and complex business landscapes.
-      </p>
-
-      <p>
-        My journey reflects a balance of rational decision-making and emotional
-        depth — shaped by education, travel, and personal reinvention.
+        I am a Russian-born entrepreneur and executive based in
+        Los Angeles, specializing in international trade, logistics
+        strategy, and sustainable global operations.
       </p>
     </div>
 
   </div>
+
 </section>
+
 
 
     <!-- Education -->
