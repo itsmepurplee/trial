@@ -5,8 +5,7 @@
   <meta charset="UTF-8" />
   <title>Yulia Stepanovna Vorontsova</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 
  <style>
@@ -18,18 +17,6 @@
     --accent: #2f3a45;
     --max-width: 820px;
   }
-/* Typography */
-h1, h2, h3 {
-  font-family: "Playfair Display", serif;
-  font-weight: 400;
-  margin: 0;
-}
-
-body, p, li, a {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  color: #111;
-}
 
   * {
     box-sizing: border-box;
@@ -87,9 +74,10 @@ body, p, li, a {
 .hero {
   position: relative;
   height: 100vh;
-  overflow: hidden;
+  background-image: url("images/New1.png");
+  background-size: cover;
+  background-position: center;
 }
-
 
 .hero-overlay {
   position: absolute;
@@ -115,33 +103,17 @@ body, p, li, a {
 
 .hero-content h1 {
   font-family: "Playfair Display", serif;
-  font-size: 64px;
+  font-size: 46px;
   font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -0.5px;
-  margin-bottom: 24px;
+  line-height: 1.25;
+  margin-bottom: 18px;
 }
-
 
 .hero-content p {
-  font-size: 18px;
-  max-width: 680px;
-  line-height: 1.6;
+  font-size: 16px;
+  max-width: 720px;
   color: rgba(255, 255, 255, 0.85);
 }
-.hero-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  z-index: 0;
-}
-
 
   /* MAIN CONTENT */
   main {
@@ -159,14 +131,11 @@ body, p, li, a {
     font-weight: 400;
   }
 
- h2 {
-  font-size: 40px;
-  line-height: 1.2;
-  margin-top: 0;
-  margin-bottom: 32px;
-  letter-spacing: -0.3px;
-}
-
+  h2 {
+    font-size: 26px;
+    margin-top: 80px;
+    margin-bottom: 18px;
+  }
 
   p {
     font-size: 16px;
@@ -183,21 +152,15 @@ body, p, li, a {
     margin-bottom: 8px;
   }
 
- .section {
-  scroll-margin-top: 120px;
-  padding: 140px 0;
-}
+  .section {
+    scroll-margin-top: 120px;
+  }
 
-
-.divider {
-  height: 1px;
-  background: var(--border-light);
-  margin: 140px 0;
-}
-.section p {
-  max-width: 720px;
-}
-
+  .divider {
+    height: 1px;
+    background: var(--border-light);
+    margin: 80px 0;
+  }
 
   footer {
     margin-top: 120px;
@@ -221,7 +184,15 @@ body, p, li, a {
 }
 
 
-
+/* =========================
+   INTRO GRID
+========================= */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1.1fr;
+  gap: 64px;
+  align-items: center;
+}
 
 /* =========================
    TEXT
@@ -233,8 +204,50 @@ body, p, li, a {
 /* =========================
    IMAGE
 ========================= */
+.intro-image {
+  position: relative;
+}
+
+.intro-image img {
+  width: 100%;
+  max-width: 420px; /* keep as-is */
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Frame */
+.intro-image::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  z-index: -1;
+}
 
 
+/* Text colors */
+.intro-dark h1 {
+  color: #ffffff;
+}
+
+.intro-dark p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.intro-dark .meta {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Image adjustments for dark background */
+.intro-dark .intro-image img {
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+.intro-dark .intro-image::after {
+  border-color: rgba(255, 255, 255, 0.08);
+}
 
 /* =========================
    MOBILE
@@ -256,14 +269,18 @@ body, p, li, a {
 /* Black background section */
 .intro-dark {
   width: 100%;
+  background: radial-gradient(circle at center, #141414 0%, #0b0b0b 60%);
   padding: 140px 24px;
 }
-
-.intro-text {
-  max-width: none;
+/* White card */
+.intro-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 64px;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.45);
 }
-
-
 /* Fix text colors inside white intro card */
 .intro-card h1 {
   color: #111111;
@@ -320,96 +337,6 @@ body, p, li, a {
     grid-template-columns: 1fr;
   }
 }
-/* =========================
-   FRAMER-STYLE BUTTONS
-========================= */
-
-.btn {
-  display: inline-block;
-  padding: 16px 36px;
-  border: none;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  text-decoration: none;
-
-  background: #000000;
-  color: #ffffff;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-
-  transition: all 0.25s ease;
-}
-
-/* =========================
-   FRAMER-STYLE MOTION
-========================= */
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(24px);
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* CARD CONTENT: TEXT LEFT, IMAGE RIGHT */
-.intro-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 1.4fr;
-  gap: 80px;
-  align-items: center;
-}
-
-/* TEXT */
-.intro-text {
-  max-width: none;
-}
-
-/* IMAGE CONTAINER */
-.intro-image {
-  width: 100%;
-}
-
-/* IMAGE ITSELF */
-.intro-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 22px;
-  object-fit: cover;
-}
-/* ===== FINAL, CLEAN INTRO LAYOUT ===== */
-
-.intro-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 1.4fr;
-  gap: 80px;
-  align-items: center;
-}
-
-/* TEXT */
-.intro-text {
-  max-width: none;
-}
-
-/* IMAGE */
-.intro-image {
-  width: 100%;
-}
-
-.intro-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 22px;
-  object-fit: cover;
-}
 
 </style>
 
@@ -435,25 +362,15 @@ body, p, li, a {
   </div>
 </nav>
 
-<header class="hero">
-
-  <!-- VIDEO BACKGROUND -->
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="tri.mp4" type="video/mp4">
-  </video>
-
+ <header class="hero">
   <div class="hero-overlay"></div>
-
-  <div class="hero-content fade-in">
-
-
+  <div class="hero-content">
     <h1>Strategist, Investor, and Global Executive</h1>
     <p>
       Working at the intersection of international trade, logistics strategy,
       and cross-border business systems, with a focus on sustainable growth
       and long-term value creation.
     </p>
-    <a href="#about" class="btn">Learn more</a>
   </div>
 </header>
 
@@ -461,24 +378,29 @@ body, p, li, a {
   <main>
 
     <!-- Intro -->
-<section class="intro-dark">
+<section class="intro intro-dark">
   <div class="intro-card">
     <div class="intro-grid">
 
       <div class="intro-text">
         <h1>Yulia Stepanovna Vorontsova</h1>
-        <p>A woman of intelligence, elegance, and resilience…</p>
-        <p class="meta">Born March 10, 1987 · Los Angeles</p>
+        <p>
+          A woman of intelligence, elegance, and resilience — blending strategy,
+          emotional intelligence, and global perspective.
+        </p>
+
+        <div class="meta">
+          Born March 10, 1987 · Russian ancestry · Based in Los Angeles, California
+        </div>
       </div>
 
       <div class="intro-image">
-        <img src="images/your-image.jpg" alt="Portrait">
+        <img src="images/huang.jpg" alt="Yulia Vorontsova portrait">
       </div>
 
     </div>
   </div>
 </section>
-
 
 
     <div class="divider"></div>
@@ -494,8 +416,7 @@ body, p, li, a {
     </div>
 
     <!-- RIGHT: YOUR TEXT -->
-    <div class="profile-text fade-in">
-
+    <div class="profile-text">
       <h2>Professional Profile</h2>
 
       <p>
