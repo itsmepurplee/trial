@@ -241,17 +241,35 @@ body, p, li, a {
 /* =========================
    IMAGE
 ========================= */
-.intro-image {
+..intro-section {
   position: relative;
+  padding: 160px 8% 180px;
+  background:
+    radial-gradient(
+      circle at top center,
+      rgba(40, 80, 130, 0.35),
+      rgba(0, 0, 0, 0.9) 55%,
+      #000 100%
+    );
+  overflow: hidden;
+}
+.intro-section::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 900px;
+  height: 900px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.06),
+    transparent 65%
+  );
+  filter: blur(80px);
+  pointer-events: none;
 }
 
-.intro-image img {
-  width: 100%;
-  max-width: 420px; /* keep as-is */
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-}
 
 /* Frame */
 .intro-image::after {
@@ -311,13 +329,19 @@ body, p, li, a {
 }
 /* White card */
 .intro-card {
+  position: relative;
   max-width: 1100px;
   margin: 0 auto;
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 64px;
-  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.45);
+  padding: 90px 100px;
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 26px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
+  box-shadow:
+    0 60px 140px rgba(0,0,0,0.6);
 }
+
 /* Fix text colors inside white intro card */
 .intro-card h1 {
   color: #111111;
@@ -409,6 +433,29 @@ body, p, li, a {
     opacity: 1;
     transform: translateY(0);
   }
+}
+.intro-image img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 35px 90px rgba(0,0,0,0.45);
+  filter: contrast(1.05) saturate(0.95);
+}
+.intro-image {
+  position: relative;
+}
+.intro-image::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 24px;
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.15),
+    rgba(0,0,0,0.2)
+  );
+  z-index: -1;
 }
 
 </style>
