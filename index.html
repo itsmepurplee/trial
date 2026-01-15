@@ -557,6 +557,68 @@
     margin-bottom: 40px;
   }
 }
+/* =========================
+   PERSONAL PHILOSOPHY
+========================= */
+
+.philosophy-editorial {
+  background: #ffffff;
+  padding: 140px 24px;
+}
+
+.philosophy-header {
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.philosophy-header h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  margin: 0;
+}
+
+.philosophy-header p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* GRID ITEMS */
+.philosophy-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.philosophy-item h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #2f3a45;
+}
+
+.philosophy-item p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .philosophy-header {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 </style>
 
@@ -748,29 +810,50 @@
 
 
     <!-- Philosophy -->
-    <section class="section">
-      <h2>Personal Philosophy</h2>
-      <p>
-        I believe intelligence should be gentle, strength should be quiet,
-        and success should carry responsibility.
-      </p>
-      <p>
-        Life is not defined by comfort, but by the courage to choose a
-        more meaningful path.
-      </p>
-    </section>
+   <section class="philosophy-editorial">
 
-    <!-- Interests -->
-    <section class="section">
-      <h2>Interests</h2>
-      <ul>
-        <li>Scuba Diving — Phuket & Similan Islands</li>
-        <li>Yoga & Mindful Movement</li>
-        <li>Reading — Financial & Personal Growth</li>
-        <li>Hiking — Yosemite National Park</li>
-        <li>International Travel</li>
-      </ul>
-    </section>
+  <!-- TOP ROW -->
+  <div class="philosophy-header">
+    <h2>Personal Philosophy</h2>
+
+    <p>
+      My personal philosophy is rooted in clarity, restraint, and purpose.
+      I believe success is not measured by visibility, but by responsibility,
+      integrity, and the long-term value one creates.
+    </p>
+  </div>
+
+  <!-- PHILOSOPHY POINTS -->
+  <div class="philosophy-grid">
+
+    <div class="philosophy-item">
+      <h4>Quiet Strength</h4>
+      <p>
+        True strength does not demand attention. It is reflected in calm
+        decision-making, resilience, and composure under pressure.
+      </p>
+    </div>
+
+    <div class="philosophy-item">
+      <h4>Intelligent Simplicity</h4>
+      <p>
+        Intelligence should simplify complexity, not amplify it.
+        Clear thinking and structured action lead to sustainable outcomes.
+      </p>
+    </div>
+
+    <div class="philosophy-item">
+      <h4>Meaning Over Comfort</h4>
+      <p>
+        A meaningful life requires courage — the willingness to choose
+        growth, accountability, and long-term purpose over short-term ease.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
 
     <!-- Charity -->
     <section class="section">
