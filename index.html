@@ -442,17 +442,17 @@ body, p, li, a {
 }
 .intro-image img {
   width: 100%;
-  height: 100%;
-  border-radius: 28px;
-  object-fit: cover;
-  box-shadow: 0 50px 120px rgba(0, 0, 0, 0.55);
-  filter: contrast(1.05) saturate(0.95);
+  height: auto;           /* 🔑 keep original aspect ratio */
+  display: block;
+  border-radius: 26px;
+  box-shadow: 0 40px 110px rgba(0, 0, 0, 0.45);
 }
+
 .intro-image {
   width: 100%;
-  height: 420px;
   position: relative;
 }
+
 
 .intro-image {
   position: relative;
