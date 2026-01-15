@@ -440,28 +440,6 @@ body, p, li, a {
     transform: translateY(0);
   }
 }
-.intro-image img {
-  width: 100%;
-  height: auto;           /* 🔑 keep original aspect ratio */
-  display: block;
-  border-radius: 26px;
-  box-shadow: 0 40px 110px rgba(0, 0, 0, 0.45);
-}
-
-.intro-image {
-  width: 100%;
-  position: relative;
-}
-
-
-.intro-image {
-  position: relative;
-}
-
-/* IMAGE STYLE FOR INTRO SECTION */
-.intro-image {
-  position: relative;
-}
 
 
 /* soft frame behind image */
@@ -474,10 +452,7 @@ body, p, li, a {
   align-items: center;
 }
 
-/* TEXT SIDE */
-.intro-text {
-  max-width: 520px;
-}
+
 
 
 /* INTRO IMAGE — NO LIMIT, NO CROP */
@@ -492,6 +467,29 @@ body, p, li, a {
   object-fit: contain;   /* ✅ NO CROPPING */
   border-radius: 26px;
   display: block;
+}
+/* INTRO LAYOUT — TEXT LEFT, IMAGE RIGHT */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* INTRO IMAGE CONTAINER — BIG AREA */
+.intro-image {
+  width: 100%;
+}
+
+/* INTRO IMAGE — NO LIMIT, NO CROP */
+.intro-image img {
+  width: 100%;
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+  display: block;
+  border-radius: 26px;
+  box-shadow: 0 40px 110px rgba(0, 0, 0, 0.45);
 }
 
 </style>
