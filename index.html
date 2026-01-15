@@ -619,6 +619,72 @@
     grid-template-columns: 1fr;
   }
 }
+/* =========================
+   CHARITY & PUBLIC WELFARE
+========================= */
+
+.charity-editorial {
+  background: #f3ede4;
+}
+
+/* IMAGE */
+.charity-image img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  display: block;
+}
+
+/* CONTENT */
+.charity-content {
+  padding: 120px 24px;
+}
+
+.charity-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* HEADLINE */
+.charity-grid h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 52px;
+  line-height: 1.1;
+  color: #1f5f3b;
+  margin: 0;
+}
+
+/* TEXT */
+.charity-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.charity-note {
+  font-weight: 500;
+  color: #1f5f3b;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .charity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .charity-grid h2 {
+    margin-bottom: 32px;
+  }
+
+  .charity-image img {
+    height: 360px;
+  }
+}
 
 </style>
 
@@ -856,23 +922,40 @@
 
 
     <!-- Charity -->
-    <section class="section">
-      <h2>Charity & Public Welfare</h2>
-      <p>
-        I actively participate in charitable initiatives, including education
-        support, environmental protection, and elderly care.
-      </p>
-      <p>
-        A portion of my income is consistently donated to organizations that
-        focus on long-term social value.
-      </p>
-    </section>
+   <section class="charity-editorial">
 
-    <!-- Footer -->
-    <footer>
-      © Yulia Stepanovna Vorontsova · Personal Profile
-    </footer>
+  <!-- IMAGE -->
+  <div class="charity-image">
+    <img src="images/charity.jpg" alt="Charity and public welfare">
+  </div>
 
-  </main>
-</body>
-</html>
+  <!-- CONTENT -->
+  <div class="charity-content">
+
+    <div class="charity-grid">
+
+      <!-- LEFT -->
+      <h2>
+        Building a future<br>
+        rooted in responsibility
+      </h2>
+
+      <!-- RIGHT -->
+      <div class="charity-text">
+        <p>
+          I believe that success carries an obligation to contribute beyond
+          oneself. My involvement in public welfare initiatives focuses on
+          education support, environmental responsibility, and elderly care.
+        </p>
+
+        <p class="charity-note">
+          A consistent portion of my income is dedicated to causes that create
+          long-term social value rather than short-term visibility.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
