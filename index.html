@@ -479,23 +479,20 @@ body, p, li, a {
   max-width: 520px;
 }
 
-/* IMAGE SIDE */
+
+/* INTRO IMAGE — NO LIMIT, NO CROP */
 .intro-image {
   width: 100%;
-  height: 420px;
-  position: relative;
 }
 
 .intro-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;          /* ✅ keeps original proportions */
+  max-width: none;       /* ✅ removes width limit */
+  object-fit: contain;   /* ✅ NO CROPPING */
   border-radius: 26px;
-  box-shadow: 0 40px 110px rgba(0, 0, 0, 0.45);
+  display: block;
 }
-
-/* subtle luxury glow behind image */
-
 
 </style>
 
